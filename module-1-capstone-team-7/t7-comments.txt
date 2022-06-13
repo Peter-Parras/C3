@@ -1,0 +1,25 @@
+- Some minor issues with unused and commented out code.
+
+- Stock should not go into negative:
+--------------------------------
+A3 Mountain Melter  $2.35 7
+B4 Caramel Bar  $2.25 7
+A4 Chocolate Bar  $1.75 -2
+--------------------------------
+
+- You should validate user input for the dollar bills. I was able
+to trigger an exception with a non numeric value.
+
+--------------------------------
+Enter value of bill (1|5|10|20): 
+iodine
+Exception in thread "main" java.util.InputMismatchException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:939)
+	at java.base/java.util.Scanner.next(Scanner.java:1594)
+	at java.base/java.util.Scanner.nextDouble(Scanner.java:2564)
+	at com.techelevator.CaTEringCapstoneCLI.displayLevel1_P_M(CaTEringCapstoneCLI.java:83)
+
+- An absolute file path like this could cause problems:
+private File file = new File("C:\\Users\\Student\\workspace\\module-1-capstone-team-7\\capstone\\catering1.csv");
+
+You only need to provide a path relative to the root of the project.
